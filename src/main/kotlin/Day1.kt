@@ -1,12 +1,12 @@
 fun main() {
-    val sums = getLines("day1/input2.txt")
+    val sortedSums = getLines("day1/input2.txt")
         .fold(mutableListOf(mutableListOf<Long>())) { acc, s ->
             if (s.isBlank()) acc.add(mutableListOf()) else acc.last().add(s.toLong())
             acc
         }.map { it.sum() }
+        .sortedDescending()
 
-    val top3 = sums.sortedDescending().take(3)
-    println(top3.first())
+    println(sortedSums.first())
 
-    println(top3.sum())
+    println(sortedSums.take(3).sum())
 }
