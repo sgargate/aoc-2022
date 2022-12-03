@@ -25,10 +25,10 @@ private fun score(first: Shape, second: Shape) = when {
     else -> 3
 } + second.score
 
-enum class Shape(val first: Char, val second: Char, val score: Int){
-    Rock('A', 'X', 1),
-    Paper('B', 'Y',2 ),
-    Scissors('C', 'Z',3);
+enum class Shape(val score: Int){
+    Rock(1),
+    Paper(2),
+    Scissors(3);
 
     val beats: Shape
         get() = when (this) {
@@ -38,14 +38,17 @@ enum class Shape(val first: Char, val second: Char, val score: Int){
         }
 
     companion object {
-        fun byChar(c: Char) =
-            values().find { it.first == c || it.second == c } ?: throw RuntimeException("not found $c" )
-
+        fun byChar(c: Char) = when(c){
+            'A', 'X' -> Rock
+            'B', 'Y' -> Paper
+            'C', 'Z' -> Scissors
+            else ->  error("not found $c" )
+        }
         fun byOutcome(c: Char, firstShape: Shape ) = when(c){
             'X' -> firstShape.beats
             'Y' -> firstShape
             'Z' -> values().first { it.beats == firstShape }
-            else -> throw RuntimeException("not found $c")
+            else -> error("not found $c")
         }
     }
 }
