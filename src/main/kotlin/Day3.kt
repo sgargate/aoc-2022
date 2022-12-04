@@ -9,15 +9,15 @@ fun main() {
 
     val sum = lines.map { line ->
         val firstCompartment = BitSet()
-        val secondComparment = BitSet()
+        val secondCompartment = BitSet()
         val mid = line.length / 2
 
         line.mapIndexed { index, c ->
             if (index < mid)
                 firstCompartment.set(c.code)
-            else secondComparment.set(c.code)
+            else secondCompartment.set(c.code)
         }
-        firstCompartment.and(secondComparment)
+        firstCompartment.and(secondCompartment)
         firstCompartment
     }.sumOf {
         priority[it.nextSetBit(0).toChar()] ?: 0
