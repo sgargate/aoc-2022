@@ -9,6 +9,14 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
     .padStart(32, '0')
 
 
-fun IntRange.Companion.ofDashSeparated(range: String): IntRange {
-    return IntRange(range.substringBefore("-").toInt(), range.substringAfter("-").toInt())
+fun String.toIntRange(): IntRange {
+    return substringBefore("-").toInt() .. substringAfter("-").toInt()
+}
+
+fun IntRange.fullyOverlaps(other: IntRange) : Boolean {
+    return first <= other.first && last >=other.last
+}
+
+fun IntRange.overlaps(other: IntRange) : Boolean {
+    return first <= other.last && other.first <= last
 }
