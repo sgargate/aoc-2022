@@ -3,7 +3,7 @@ import Shape.Companion.byOutcome
 
 fun main() {
 
-    val lines = getLines("day2/input2.txt")
+    val lines = getLines("day02/input2.txt")
     val totalScore = lines.map {
         val split = it.split(" ")
         split[0].first() to split[1].first()

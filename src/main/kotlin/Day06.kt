@@ -1,6 +1,6 @@
 
 fun main() {
-    val inputs = getLines("day6/input1.txt")
+    val inputs = getLines("day06/input1.txt")
 
     inputs.forEach {
         println(startMarker(it))

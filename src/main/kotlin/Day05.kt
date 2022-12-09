@@ -2,7 +2,7 @@ import java.util.Stack
 
 fun main() {
 
-    val input = getText("day5/input2.txt").split("\n\n")
+    val input = getText("day05/input2.txt").split("\n\n")
     val stacks = stacks(input[0].lines().reversed())
     val moves = moves(input[1].lines())
 

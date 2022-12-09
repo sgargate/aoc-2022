@@ -1,7 +1,7 @@
 import java.util.BitSet
 
 fun main() {
-    val lines = getLines("day3/input2.txt")
+    val lines = getLines("day03/input2.txt")
 
     val priority: Map<Char, Int> = (('a'..'z').mapIndexed { index, c -> c to (index+1) } +
       ('A'..'Z').mapIndexed { index, c -> c to (index+27) }).toMap()

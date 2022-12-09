@@ -2,7 +2,7 @@ import java.lang.Integer.max
 
 fun main() {
 
-    val grid = getLines("day8/input2.txt").map {
+    val grid = getLines("day08/input1.txt").map {
         it.map { it.digitToInt() }
     }
 

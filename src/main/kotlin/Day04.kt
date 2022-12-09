@@ -11,7 +11,7 @@ fun main() {
 
 }
 
-private fun ranges() = getLines("day4/input2.txt")
+private fun ranges() = getLines("day04/input2.txt")
     .map {
         val s = it.split(",")
         s[0].toIntRange() to s[1].toIntRange()

@@ -1,5 +1,5 @@
 fun main() {
-    val lines = getLines("day7/input2.txt")
+    val lines = getLines("day07/input2.txt")
 
     var i = 0
 

@@ -1,5 +1,5 @@
 fun main() {
-    val sortedSums = getLines("day1/input2.txt")
+    val sortedSums = getLines("day01/input2.txt")
         .fold(mutableListOf(mutableListOf<Long>())) { acc, s ->
             if (s.isBlank()) acc.add(mutableListOf()) else acc.last().add(s.toLong())
             acc
